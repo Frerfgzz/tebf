@@ -281,7 +281,7 @@ function RadientPaid:Window(text,maincolor)
 	UserTag.TextXAlignment = Enum.TextXAlignment.Left
 
 	UserName.Text = "Smz Hub"
-	UserTag.Text = ""
+	UserTag.Text = "Smz Hub"
 
 	ServersHoldFrame.Name = "ServersHoldFrame"
 	ServersHoldFrame.Parent = MainFrame
