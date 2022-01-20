@@ -4061,7 +4061,7 @@ spawn(function()
 			if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
 				MagnetActive = false
 				cq()
-				TP(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame) = CFrameQuest
+				totarget(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame) = CFrameQuest
 				if (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 4 then
 					cq()
 					if (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 20 then
@@ -4069,7 +4069,7 @@ spawn(function()
 						wait(3.2)
 						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
 					else
-						TP(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame) = CFrameQuest
+						totarget(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame) = CFrameQuest
 					end
 				end
 			elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
@@ -4083,7 +4083,7 @@ spawn(function()
 										if game:GetService("Workspace").Enemies:FindFirstChild(Ms) then
 											if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
 												EquipWeapon(_G.SelectWeapon)
-												TP(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame) = v.HumanoidRootPart.CFrame * CFrame.new(0,30,10)
+												totarget(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame) = v.HumanoidRootPart.CFrame * CFrame.new(0,30,10)
 												v.HumanoidRootPart.CanCollide = false
 												v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
 												game:GetService("VirtualUser"):CaptureController()
@@ -4097,7 +4097,7 @@ spawn(function()
 										else
 											MagnetActive = false
 											cq()
-											TP(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame) = CFrameMon
+											totarget(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame) = CFrameMon
 										end
 									until not v.Parent or v.Humanoid.Health <= 0 or _G.FarmLevelTween == false or game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name)
 								end
@@ -4106,7 +4106,7 @@ spawn(function()
 					else
 						MagnetActive = false
 						cq()
-						TP(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame) = CFrameMon
+						totarget(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame) = CFrameMon
 					end
 				end)
 			end
