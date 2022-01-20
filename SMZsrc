@@ -280,8 +280,8 @@ function RadientPaid:Window(text,maincolor)
 	UserTag.TextTransparency = 0
 	UserTag.TextXAlignment = Enum.TextXAlignment.Left
 
-	UserName.Text = "Smz● Hub"
-	UserTag.Text = "Smz ● Hub"
+	UserName.Text = "Smz Hub"
+	UserTag.Text = ""
 
 	ServersHoldFrame.Name = "ServersHoldFrame"
 	ServersHoldFrame.Parent = MainFrame
@@ -4063,10 +4063,10 @@ spawn(function()
 				cq()
 				totarget(CFrameQuest)
 				if (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 4 then
-					wait(1.1)
 					cq()
 					if (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 20 then
-						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest", NameQuest, LevelQuest)
+						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest", NaemQuest, LevelQuest)
+						wait(3.2)
 						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
 					else
 						totarget(CFrameQuest)
@@ -4083,7 +4083,7 @@ spawn(function()
 										if game:GetService("Workspace").Enemies:FindFirstChild(Ms) then
 											if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
 												EquipWeapon(_G.SelectWeapon)
-												totarget(v.HumanoidRootPart.CFrame * Farm_Mode)
+												totarget(v.HumanoidRootPart.CFrame * CFrame.new(0,30,10))
 												v.HumanoidRootPart.CanCollide = false
 												v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
 												game:GetService("VirtualUser"):CaptureController()
@@ -4096,6 +4096,7 @@ spawn(function()
 											end
 										else
 											MagnetActive = false
+											cq()
 											totarget(CFrameMon)
 										end
 									until not v.Parent or v.Humanoid.Health <= 0 or _G.FarmLevelTween == false or game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name)
@@ -4104,6 +4105,7 @@ spawn(function()
 						end
 					else
 						MagnetActive = false
+						cq()
 						totarget(CFrameMon)
 					end
 				end)
