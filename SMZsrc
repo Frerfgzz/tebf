@@ -280,8 +280,8 @@ function RadientPaid:Window(text,maincolor)
 	UserTag.TextTransparency = 0
 	UserTag.TextXAlignment = Enum.TextXAlignment.Left
 
-	UserName.Text = "Smz Hub"
-	UserTag.Text = "Smz Hub"
+	UserName.Text = "Smz● Hub"
+	UserTag.Text = "Smz ● Hub"
 
 	ServersHoldFrame.Name = "ServersHoldFrame"
 	ServersHoldFrame.Parent = MainFrame
@@ -4066,7 +4066,7 @@ spawn(function()
 					wait(1.1)
 					cq()
 					if (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 20 then
-						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest", NaemQuest, LevelQuest)
+						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest", NameQuest, LevelQuest)
 						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
 					else
 						totarget(CFrameQuest)
@@ -4083,7 +4083,7 @@ spawn(function()
 										if game:GetService("Workspace").Enemies:FindFirstChild(Ms) then
 											if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
 												EquipWeapon(_G.SelectWeapon)
-												totarget(v.HumanoidRootPart.CFrame * farm_mode
+												totarget(v.HumanoidRootPart.CFrame * Farm_Mode)
 												v.HumanoidRootPart.CanCollide = false
 												v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
 												game:GetService("VirtualUser"):CaptureController()
