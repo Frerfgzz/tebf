@@ -3969,6 +3969,20 @@ main:Label("Bypass Need 100 HP")
 main:Button("Bypass",function()
 	loadstring(game:HttpGet("https://pastebin.com/raw/ZVHyF6EU", true))()
 end)
+main:Toggle("Auto Haki",true,function(value)
+    _G.Haki = value
+    if _G.Haki then
+if game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
+
+    else
+        local args = {
+            [1] = "Buso"
+        }
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+        end
+    end
+end)
+main:Label("Farm")
 _G.FarmLevel = false
 main:Toggle("Auto Farm TP",false,function(x)
     _G.FarmLevel = x
@@ -6532,52 +6546,6 @@ main:Label("Auto Farm Boss")
 			AutoFramBoss()
 		end
 	end)
-local Setting = server:Channel("Setting")
-Setting:Toggle("Magnet", false, function(vu)
-    Magnet = vu
-end)
-Setting:Toggle("Auto Haki",true,function(value)
-    _G.Haki = value
-    if _G.Haki then
-if game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
-
-    else
-        local args = {
-            [1] = "Buso"
-        }
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-        end
-    end
-end)
-Setting:Button("Mob Invisble",false,function(value)
-_G.inv = value
-     while wait() do
-         if _G.inv then
-         pcall(function()
- for i,v in pairs(game:GetService("Workspace").Enemies:GetDescendants()) do
-     if v.ClassName == "MeshPart" then
-     v.Transparency = 1
- end
- end
- for i,v in pairs(game:GetService("Workspace").Enemies:GetDescendants()) do
-     if v.Name == "Head" then
-     v.Transparency = 1
- end
- end
-     for i,v in pairs(game:GetService("Workspace").Enemies:GetDescendants()) do
-         if v.ClassName == "Accessory" then
-             v.Handle.Transparency = 1
-         end
-     end
-     for i,v in pairs(game:GetService("Workspace").Enemies:GetDescendants()) do
-         if v.ClassName == "Decal" then
-         v.Transparency = 1
-          end
-        end
-      end)
-    end
-  end
-end)
 local Stats = server:Channel("Stats")
 Stats:Toggle("Melee",false,function(Value)
 	_G.Meleebf = Value    
@@ -6783,7 +6751,7 @@ PlayerName = {}
                 v:Destroy()
             end
         end
-        tab2:Toggle("Auto Bounty + Hop (Gun Only)",false,function(value)
+        tab2:Toggle("Auto Bounty + Hop (Gun Only) (Beta)",false,function(value)
             _G.Bounty1 = value
         end)
         spawn(function()
