@@ -4083,7 +4083,7 @@ spawn(function()
 										if game:GetService("Workspace").Enemies:FindFirstChild(Ms) then
 											if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
 												EquipWeapon(_G.SelectWeapon)
-												totarget(v.HumanoidRootPart.CFrame * CFrame.new(0,30,10)
+												totarget(v.HumanoidRootPart.CFrame * farm_mode
 												v.HumanoidRootPart.CanCollide = false
 												v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
 												game:GetService("VirtualUser"):CaptureController()
