@@ -280,8 +280,8 @@ function RadientPaid:Window(text,maincolor)
 	UserTag.TextTransparency = 0
 	UserTag.TextXAlignment = Enum.TextXAlignment.Left
 
-	UserName.Text = "Smz● Hub"
-	UserTag.Text = "Smz ● Hub"
+	UserName.Text = "Smz Hub"
+	UserTag.Text = ""
 
 	ServersHoldFrame.Name = "ServersHoldFrame"
 	ServersHoldFrame.Parent = MainFrame
@@ -4082,8 +4082,8 @@ spawn(function()
 									repeat game:GetService("RunService").Heartbeat:wait()
 										if game:GetService("Workspace").Enemies:FindFirstChild(Ms) then
 											if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
-												EquipWeapon(SelectToolWeapon)
-												totarget(v.HumanoidRootPart.CFrame * Farm_Mode)
+												EquipWeapon(_G.SelectWeapon)
+												totarget(v.HumanoidRootPart.CFrame * CFrame.new(0,30,10)
 												v.HumanoidRootPart.CanCollide = false
 												v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
 												game:GetService("VirtualUser"):CaptureController()
